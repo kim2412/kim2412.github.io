@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>이용약관 · Terms — Bridgelab</title>
+<meta name="description" content="Bridgelab LaunchPilot 이용약관. Terms of Service for Bridgelab’s LaunchPilot tool.">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1112" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111412'/%3E%3Cpath d='M6 22c3-8 17-8 20 0' stroke='%23FF5A36' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M9 22v-3M16 22v-6M23 22v-3' stroke='%23F1F2EE' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --paper:#F1F2EE; --card:#FFFFFF; --ink:#111412; --ink-2:#2E3430; --muted:#5C645F;
+  --line:#DADDD6; --signal:#FF5A36; --chip:#E6E8E2; --shadow:0 1px 0 rgba(17,20,18,.04);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#0F1112; --card:#171A1B; --ink:#EEF0EC; --ink-2:#CDD2CC; --muted:#8E968F;
+    --line:#2A2F2E; --signal:#FF6B4A; --chip:#232827; --shadow:none; color-scheme: dark; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 15px/1.7 "IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+main{word-break:keep-all;overflow-wrap:break-word}
+a{color:inherit;text-underline-offset:3px}
+.wrap{max-width:760px;margin:0 auto;padding-inline:18px;padding-block:28px 56px}
+header{display:grid;gap:14px;padding-block:8px 22px;border-bottom:1px solid var(--line)}
+.mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.mark svg{width:34px;height:34px;flex:none}
+.word{font:800 22px/1 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em}
+h1{margin:6px 0 0;font:800 clamp(28px,6.4vw,42px)/1.1 "Bricolage Grotesque","IBM Plex Sans KR",sans-serif;letter-spacing:-.03em}
+h1 .ko{font-family:"IBM Plex Sans KR",sans-serif;font-weight:600;letter-spacing:-.04em}
+.meta{margin:0;color:var(--muted);font-size:13px}
+.jump{display:flex;flex-wrap:wrap;gap:8px}
+.jump a{text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-2)}
+.jump a:hover{border-color:var(--ink)}
+.lang-head{margin:34px 0 12px;font:700 13px/1.2 "IBM Plex Sans KR",sans-serif;letter-spacing:.06em;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 8px;margin-bottom:10px;box-shadow:var(--shadow)}
+h2{margin:0 0 6px;font:600 16.5px/1.4 "IBM Plex Sans KR",sans-serif;letter-spacing:-.01em}
+h2 .n{font:700 13px/1 "IBM Plex Mono",monospace;color:var(--signal);margin-right:8px}
+p,ul{margin:0 0 12px}
+ul{padding-left:20px}
+li{margin-bottom:4px}
+code{font:500 13px/1 "IBM Plex Mono",monospace;background:var(--chip);padding:2px 5px;border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 12px}
+th,td{text-align:left;vertical-align:top;padding:8px 8px 8px 0;border-top:1px solid var(--line)}
+th{font-weight:600;white-space:nowrap;padding-right:12px;color:var(--ink-2)}
+.tbl{overflow-x:auto}
+.note{color:var(--muted);font-size:13.5px}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--muted);font-size:12.5px}
+footer nav{display:flex;flex-wrap:wrap;gap:12px}
+a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="mark" href="./" aria-label="Bridgelab home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--ink)"/><path d="M6 22c3-8 17-8 20 0" stroke="var(--signal)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M9 22v-3M16 22v-6M23 22v-3" stroke="var(--paper)" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span class="word">Bridgelab</span>
+    </a>
+    <h1><span class="ko">이용약관</span><br>Terms of Service</h1>
+    <p class="meta">시행일 Effective date: 2026-09-29 · 적용 대상 Applies to: LaunchPilot (Meta app “Bridgelab Poster”)</p>
+    <nav class="jump" aria-label="Language">
+      <a href="#ko">한국어</a>
+      <a href="#en">English</a>
+      <a href="privacy.html">개인정보처리방침 · Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="ko" lang="ko">
+      <h2 class="lang-head">한국어</h2>
+      <div class="card">
+        <h2><span class="n">01</span>서비스</h2>
+        <p><b>LaunchPilot</b>(Meta 앱 “Bridgelab Poster”)은 브릿지랩(사업자등록번호 729-71-00630)이 자기 Threads 계정 @bridgelab.app을 관리하려고 만든 내부 도구입니다. 외부에 제공하거나 판매하지 않으며, 다른 사람의 계정은 연결할 수 없습니다.</p>
+      </div>
+      <div class="card">
+        <h2><span class="n">02</span>운영 원칙</h2>
+        <ul>
+          <li>Meta 플랫폼 약관, 개발자 정책, Threads 커뮤니티 가이드라인을 지킵니다.</li>
+          <li>다른 사람의 글에 남기는 댓글은 하루 8개, 리포스트는 하루 3개로 제한하며, 광고·홍보·링크를 넣지 않습니다. 좋아요·팔로우는 자동으로 하지 않습니다.</li>
+          <li>개인정보 처리는 <a href="privacy.html">개인정보처리방침</a>을 따릅니다.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2><span class="n">03</span>문의</h2>
+        <p>우리 계정의 댓글이나 리포스트가 불편하면 <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a>으로 알려 주세요. 확인하는 대로 지우고, 이후 해당 계정에는 댓글·리포스트를 하지 않습니다.</p>
+      </div>
+    </section>
+
+    <section id="en" lang="en">
+      <h2 class="lang-head">English</h2>
+      <div class="card">
+        <h2><span class="n">01</span>The service</h2>
+        <p><b>LaunchPilot</b> (Meta app “Bridgelab Poster”) is an internal tool Bridgelab (Korean business registration no. 729-71-00630) built to manage its own Threads account, @bridgelab.app. It is not offered or sold to anyone else, and no other account can be connected.</p>
+      </div>
+      <div class="card">
+        <h2><span class="n">02</span>How we operate it</h2>
+        <ul>
+          <li>We follow the Meta Platform Terms, the Meta Developer Policies and the Threads Community Guidelines.</li>
+          <li>Comments on other people’s posts are capped at 8 per day and reposts at 3 per day, and never contain ads, promotion or links. We never like or follow automatically.</li>
+          <li>Personal data is handled as described in our <a href="privacy.html">Privacy Policy</a>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2><span class="n">03</span>Contact</h2>
+        <p>If a comment or repost from our account bothers you, email <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a>. We will remove it and stop engaging with your account.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Bridgelab · 브릿지랩</span>
+    <nav aria-label="Legal"><a href="./">Home</a><a href="data-deletion.html">데이터 삭제 · Data deletion</a><a href="terms.html">이용약관 · Terms</a></nav>
+  </footer>
+</div>
+</body>
+</html>

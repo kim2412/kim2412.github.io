@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>개인정보처리방침 · Privacy Policy — Bridgelab</title>
+<meta name="description" content="Bridgelab(브릿지랩) 개인정보처리방침 — LaunchPilot와 Threads API 데이터 처리. Privacy Policy for Bridgelab's LaunchPilot tool and Threads API data.">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1112" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111412'/%3E%3Cpath d='M6 22c3-8 17-8 20 0' stroke='%23FF5A36' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M9 22v-3M16 22v-6M23 22v-3' stroke='%23F1F2EE' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --paper:#F1F2EE; --card:#FFFFFF; --ink:#111412; --ink-2:#2E3430; --muted:#5C645F;
+  --line:#DADDD6; --signal:#FF5A36; --chip:#E6E8E2; --shadow:0 1px 0 rgba(17,20,18,.04);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#0F1112; --card:#171A1B; --ink:#EEF0EC; --ink-2:#CDD2CC; --muted:#8E968F;
+    --line:#2A2F2E; --signal:#FF6B4A; --chip:#232827; --shadow:none; color-scheme: dark; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 15px/1.7 "IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+main{word-break:keep-all;overflow-wrap:break-word}
+a{color:inherit;text-underline-offset:3px}
+.wrap{max-width:760px;margin:0 auto;padding-inline:18px;padding-block:28px 56px}
+header{display:grid;gap:14px;padding-block:8px 22px;border-bottom:1px solid var(--line)}
+.mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.mark svg{width:34px;height:34px;flex:none}
+.word{font:800 22px/1 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em}
+h1{margin:6px 0 0;font:800 clamp(28px,6.4vw,42px)/1.1 "Bricolage Grotesque","IBM Plex Sans KR",sans-serif;letter-spacing:-.03em}
+h1 .ko{font-family:"IBM Plex Sans KR",sans-serif;font-weight:600;letter-spacing:-.04em}
+.meta{margin:0;color:var(--muted);font-size:13px}
+.jump{display:flex;flex-wrap:wrap;gap:8px}
+.jump a{text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-2)}
+.jump a:hover{border-color:var(--ink)}
+.lang-head{margin:34px 0 12px;font:700 13px/1.2 "IBM Plex Sans KR",sans-serif;letter-spacing:.06em;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 8px;margin-bottom:10px;box-shadow:var(--shadow)}
+h2{margin:0 0 6px;font:600 16.5px/1.4 "IBM Plex Sans KR",sans-serif;letter-spacing:-.01em}
+h2 .n{font:700 13px/1 "IBM Plex Mono",monospace;color:var(--signal);margin-right:8px}
+p,ul{margin:0 0 12px}
+ul{padding-left:20px}
+li{margin-bottom:4px}
+code{font:500 13px/1 "IBM Plex Mono",monospace;background:var(--chip);padding:2px 5px;border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 12px}
+th,td{text-align:left;vertical-align:top;padding:8px 8px 8px 0;border-top:1px solid var(--line)}
+th{font-weight:600;white-space:nowrap;padding-right:12px;color:var(--ink-2)}
+.tbl{overflow-x:auto}
+.note{color:var(--muted);font-size:13.5px}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--muted);font-size:12.5px}
+footer nav{display:flex;flex-wrap:wrap;gap:12px}
+a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="mark" href="./" aria-label="Bridgelab home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--ink)"/><path d="M6 22c3-8 17-8 20 0" stroke="var(--signal)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M9 22v-3M16 22v-6M23 22v-3" stroke="var(--paper)" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span class="word">Bridgelab</span>
+    </a>
+    <h1><span class="ko">개인정보처리방침</span><br>Privacy Policy</h1>
+    <p class="meta">시행일 Effective date: 2026-09-29 · 적용 대상 Applies to: LaunchPilot (Meta app “Bridgelab Poster”)</p>
+    <nav class="jump" aria-label="Language">
+      <a href="#ko">한국어</a>
+      <a href="#en">English</a>
+      <a href="data-deletion.html">데이터 삭제 · Data deletion</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================== 한국어 ============================== -->
+    <section id="ko" lang="ko">
+      <h2 class="lang-head">한국어</h2>
+
+      <div class="card">
+        <h2><span class="n">01</span>누가, 무엇에 대해</h2>
+        <p>브릿지랩(Bridgelab, 사업자등록번호 729-71-00630, 이하 “브릿지랩”)은 1인 스튜디오입니다. 이 방침은 브릿지랩이 직접 만들어 내부에서만 쓰는 도구 <b>LaunchPilot</b>(Meta 앱 이름 “Bridgelab Poster”)이 Threads API로 처리하는 정보에 적용됩니다.</p>
+        <p>LaunchPilot은 외부 사용자에게 제공하는 서비스가 아닙니다. 브릿지랩 소유의 Threads 계정 <b>@bridgelab.app</b> 하나만 연결되어 있고, 다른 사람은 로그인하거나 계정을 연결할 수 없습니다.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">02</span>Threads API로 처리하는 정보</h2>
+        <div class="tbl"><table>
+          <tr><th>우리 계정</th><td>@bridgelab.app의 사용자 ID·아이디, 우리가 올린 글과 그 성과 수치(조회·좋아요·답글·리포스트·인용·공유 수), 게시 가능 횟수</td></tr>
+          <tr><th>우리 글에 달린 댓글</th><td>댓글 ID, 댓글 내용, 작성자 아이디, 작성 시각, 어느 글/댓글에 단 것인지, 숨김 여부 — 그리고 우리가 쓴 답글</td></tr>
+          <tr><th>키워드 검색 결과</th><td>AI·개발 도구 관련 키워드(예: “클로드 코드”, “바이브코딩”, “MCP”)로 찾은 <b>공개</b> 게시물의 게시물 ID, 본문, 작성자 아이디, 게시물 링크, 작성 시각, 미디어 종류, 답글/인용 여부 — 그리고 그 글에 우리가 남긴 댓글이나 리포스트 기록</td></tr>
+        </table></div>
+        <p>이미지·영상 파일, 팔로워 목록, DM, 이메일·전화번호, 위치 정보는 <b>수집하지 않습니다</b>.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">03</span>왜 쓰나요 (처리 목적)</h2>
+        <ul>
+          <li>우리 계정에 글을 올리고, 우리 글의 성과를 확인하기 위해</li>
+          <li>우리 글에 달린 댓글에 답하기 위해 — 감사 인사, 글 내용으로 답할 수 있는 질문 같은 문제없는 대화는 자동으로 답하고(하루 최대 10개), 불만·가격·우리 앱·개인적인 이야기 등 조심해야 할 댓글은 운영자가 직접 확인한 뒤에만 보냅니다. 스팸에는 답하지 않습니다.</li>
+          <li>AI·개발 도구에 관한 공개 글을 찾아 운영자가 읽고, 도움이 되는 댓글을 남기고(하루 최대 8개, 같은 사람에게는 3일에 한 번), 좋은 글을 리포스트하고(하루 최대 3개, 2시간 이상 간격), 링크가 담긴 “오늘 읽을 글” 목록을 만들기 위해</li>
+        </ul>
+        <p>좋아요와 팔로우는 자동으로 하지 않습니다. 광고 타깃팅, 프로필 분석, 데이터 판매, 자격 심사(채용·대출 등)에는 절대 쓰지 않습니다.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">04</span>AI 문장 작성 도구 (처리 위탁·국외 이전)</h2>
+        <p>댓글·답글 초안을 쓰고 광고·민감한 글을 걸러내기 위해, 해당 게시물이나 댓글의 <b>본문과 작성자 아이디</b>만 AI 문장 생성 서비스에 보냅니다. 사용하는 서비스는 그때 사용 가능한 것 하나이며, Google(Gemini API), Groq, Cloudflare(Workers AI), OpenRouter, Anthropic(Claude) 또는 이 컴퓨터 안에서 도는 로컬 모델입니다. 이 서비스들은 미국 등 국외에 있으며, 요청을 처리하는 동안에만 인터넷으로 전송됩니다. 접근 토큰이나 다른 개인정보는 보내지 않습니다.</p>
+        <p>그 밖에 제3자에게 정보를 제공하거나 판매하지 않습니다.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">05</span>어디에, 얼마나 보관하나요</h2>
+        <ul>
+          <li>보관 장소: 운영자의 컴퓨터 안 로컬 데이터베이스(SQLite). 클라우드에 올리지 않습니다.</li>
+          <li><b>키워드 검색 결과와 다른 사람의 댓글·게시물 정보는 수집한 날부터 30일이 지나면 삭제합니다.</b></li>
+          <li>우리 계정이 올린 글과 그 성과 수치는 계정을 운영하는 동안 보관합니다.</li>
+          <li>LaunchPilot 사용을 끝내면 남은 정보를 모두 지웁니다.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">06</span>삭제 요청과 권리</h2>
+        <p>누구든 자신에 관한 정보의 열람·정정·삭제·처리정지를 요청할 수 있습니다. <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a>으로 Threads 아이디(와 가능하면 게시물 링크)를 보내 주세요. 요청을 받은 날부터 10일 안에 처리하고 결과를 회신합니다. 자세한 방법: <a href="data-deletion.html">데이터 삭제 안내</a>.</p>
+        <p>Threads에서 글이나 댓글을 지우면 이후 검색에 다시 잡히지 않으며, 이미 저장된 기록도 30일 안에 삭제됩니다.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">07</span>안전하게 지키는 방법</h2>
+        <ul>
+          <li>Threads 접근 토큰은 운영자 컴퓨터의 설정 파일에만 저장하고 외부에 공유하지 않습니다.</li>
+          <li>관리 화면(대시보드)은 운영자 컴퓨터 안에서만 열립니다(127.0.0.1).</li>
+          <li>필요한 최소한의 항목만 저장합니다.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">08</span>연락처 · 개인정보 보호책임자</h2>
+        <p>브릿지랩(Bridgelab) 대표 · 이메일 <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a></p>
+        <p class="note">개인정보 침해 신고·상담: 개인정보침해신고센터(privacy.kisa.or.kr, 국번 없이 118), 개인정보분쟁조정위원회(www.kopico.go.kr, 1833-6972)</p>
+        <p class="note">이 방침이 바뀌면 이 페이지에 시행일과 함께 알립니다. 14세 미만 아동을 대상으로 하지 않습니다.</p>
+      </div>
+    </section>
+
+    <!-- ============================== English ============================== -->
+    <section id="en" lang="en">
+      <h2 class="lang-head">English</h2>
+
+      <div class="card">
+        <h2><span class="n">01</span>Who we are and what this covers</h2>
+        <p>Bridgelab (브릿지랩, Korean business registration no. 729-71-00630, “we”) is a one-person studio. This policy covers the data processed through the Threads API by <b>LaunchPilot</b> (Meta app name “Bridgelab Poster”), an internal tool we built and use ourselves.</p>
+        <p>LaunchPilot is not offered to the public. It is connected to exactly one Threads account, our own <b>@bridgelab.app</b>. No other person can sign in or connect an account.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">02</span>Data we process via the Threads API</h2>
+        <div class="tbl"><table>
+          <tr><th>Our own account</th><td>The user ID and username of @bridgelab.app, the posts we publish and their metrics (views, likes, replies, reposts, quotes, shares), and our publishing quota.</td></tr>
+          <tr><th>Replies to our posts</th><td>Reply ID, reply text, author username, timestamp, the post or reply it responds to, and hide status — plus the answer we write.</td></tr>
+          <tr><th>Keyword search results</th><td>For <b>public</b> posts found with keywords about AI and developer tools (e.g. “Claude Code”, “vibe coding”, “MCP”): post ID, text, author username, permalink, timestamp, media type, and whether it is a reply or quote — plus a record of any comment or repost we made on it.</td></tr>
+        </table></div>
+        <p>We do <b>not</b> collect images or video files, follower lists, direct messages, email addresses, phone numbers, or location data.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">03</span>Why we use it</h2>
+        <ul>
+          <li>To publish posts on our own account and see how they perform.</li>
+          <li>To answer replies on our own posts. Routine, low-risk replies (thanks, questions answerable from the post itself) are answered automatically, at most 10 per day; anything sensitive (complaints, pricing, our apps, personal topics, “are you a bot?”) waits in a review queue and is only sent after the owner approves or edits it. Spam gets no answer.</li>
+          <li>To find public posts about AI and developer tools so the owner can read them, leave helpful comments (at most 8 per day, at most once per author every 3 days), repost excellent posts (at most 3 per day, at least 2 hours apart), and build a daily reading list with links.</li>
+        </ul>
+        <p>We never like or follow automatically. We never use this data for advertising, profiling, eligibility decisions, or sale.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">04</span>AI writing services (processors, international transfer)</h2>
+        <p>To draft comments and replies and to screen out ads and sensitive posts, we send only the <b>text and author username</b> of the relevant post or reply to one AI text-generation service: Google (Gemini API), Groq, Cloudflare (Workers AI), OpenRouter, Anthropic (Claude), or a model running locally on our own computer. These services may be located outside Korea (e.g. the United States) and receive the text only to process that request. We never send access tokens or any other personal data.</p>
+        <p>We do not otherwise share, sell, or transfer data to anyone.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">05</span>Storage and retention</h2>
+        <ul>
+          <li>Where: a local SQLite database on the owner's computer. Nothing is uploaded to a cloud database.</li>
+          <li><b>Keyword search results and data about other people's posts and replies are deleted 30 days after collection.</b></li>
+          <li>Our own posts and their metrics are kept while we operate the account.</li>
+          <li>If we stop using LaunchPilot, all remaining data is deleted.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">06</span>Deletion requests and your rights</h2>
+        <p>Anyone may ask to access, correct, delete, or stop the processing of data about them. Email <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a> with your Threads username (and, if possible, links to the posts). We act within 10 days and confirm by email. Details: <a href="data-deletion.html">Data deletion instructions</a>.</p>
+        <p>If you delete a post or reply on Threads, it will not be picked up again, and any stored copy is deleted within 30 days.</p>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">07</span>Security</h2>
+        <ul>
+          <li>The Threads access token is stored only in a local configuration file on the owner's computer and is never shared.</li>
+          <li>The management dashboard only runs on the owner's computer (127.0.0.1).</li>
+          <li>We store the minimum fields needed.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">08</span>Contact</h2>
+        <p>Bridgelab (브릿지랩), owner and privacy officer · <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a></p>
+        <p class="note">Changes to this policy will be posted on this page with a new effective date. This tool is not directed at children under 14.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Bridgelab · 브릿지랩</span>
+    <nav aria-label="Legal"><a href="./">Home</a><a href="data-deletion.html">데이터 삭제 · Data deletion</a><a href="terms.html">이용약관 · Terms</a></nav>
+  </footer>
+</div>
+</body>
+</html>
