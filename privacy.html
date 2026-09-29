@@ -65,10 +65,12 @@ a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
       <span class="word">Bridgelab</span>
     </a>
     <h1><span class="ko">개인정보처리방침</span><br>Privacy Policy</h1>
-    <p class="meta">시행일 Effective date: 2026-09-29 · 적용 대상 Applies to: LaunchPilot (Meta app “Bridgelab Poster”)</p>
+    <p class="meta">시행일 Effective date: 2026-09-29 · 적용 대상 Applies to: LaunchPilot (Meta app “Bridgelab Poster”, Google API client “BridgeLab Uploader”)</p>
     <nav class="jump" aria-label="Language">
       <a href="#ko">한국어</a>
       <a href="#en">English</a>
+      <a href="#youtube-ko">YouTube (한국어)</a>
+      <a href="#youtube-en">YouTube API Services (English)</a>
       <a href="data-deletion.html">데이터 삭제 · Data deletion</a>
     </nav>
   </header>
@@ -80,8 +82,8 @@ a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
 
       <div class="card">
         <h2><span class="n">01</span>누가, 무엇에 대해</h2>
-        <p>브릿지랩(Bridgelab, 사업자등록번호 729-71-00630, 이하 “브릿지랩”)은 1인 스튜디오입니다. 이 방침은 브릿지랩이 직접 만들어 내부에서만 쓰는 도구 <b>LaunchPilot</b>(Meta 앱 이름 “Bridgelab Poster”)이 Threads API로 처리하는 정보에 적용됩니다.</p>
-        <p>LaunchPilot은 외부 사용자에게 제공하는 서비스가 아닙니다. 브릿지랩 소유의 Threads 계정 <b>@bridgelab.app</b> 하나만 연결되어 있고, 다른 사람은 로그인하거나 계정을 연결할 수 없습니다.</p>
+        <p>브릿지랩(Bridgelab, 사업자등록번호 729-71-00630, 이하 “브릿지랩”)은 1인 스튜디오입니다. 이 방침은 브릿지랩이 직접 만들어 내부에서만 쓰는 도구 <b>LaunchPilot</b>(Meta 앱 이름 “Bridgelab Poster”)이 Threads API와 <b>YouTube API 서비스</b>로 처리하는 정보, 그리고 이 웹사이트에 적용됩니다.</p>
+        <p>LaunchPilot은 외부 사용자에게 제공하는 서비스가 아닙니다. 브릿지랩 소유의 Threads 계정 <b>@bridgelab.app</b>과 브릿지랩 소유의 유튜브 채널 <b>@bridgelab_app</b> 하나씩만 연결되어 있고, 다른 사람은 로그인하거나 계정을 연결할 수 없습니다.</p>
       </div>
 
       <div class="card">
@@ -135,8 +137,23 @@ a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
         </ul>
       </div>
 
+      <div class="card" id="youtube-ko">
+        <h2><span class="n">08</span>YouTube API 서비스 (유튜브 채널 @bridgelab_app)</h2>
+        <p>LaunchPilot은 <b>YouTube API 서비스</b>(YouTube Data API v3)를 사용해, 브릿지랩이 직접 만든 영상을 브릿지랩 자신의 유튜브 채널 @bridgelab_app에 올립니다. YouTube API 서비스를 통해 처리되는 정보에는 <b>Google 개인정보처리방침</b>(<a href="http://www.google.com/policies/privacy" rel="noopener">http://www.google.com/policies/privacy</a>)도 적용되며, 유튜브 이용에는 <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube 서비스 약관</a>이 적용됩니다.</p>
+        <div class="tbl"><table>
+          <tr><th>요청하는 권한</th><td><code>youtube.upload</code>(우리 채널에 영상·썸네일 올리기), <code>youtube.readonly</code>(연결한 채널이 @bridgelab_app이 맞는지 확인하고, 구독자 수를 하루 한 번 읽기)</td></tr>
+          <tr><th>접근·저장하는 정보</th><td>우리 채널의 채널 ID·이름·핸들과 구독자 수, 우리가 올린 영상에 대해 유튜브가 돌려주는 영상 ID·주소·공개 상태, 로그인 유지용 인증 토큰(refresh token)</td></tr>
+          <tr><th>접근하지 않는 정보</th><td>다른 유튜브 사용자·시청자·다른 채널의 정보, 댓글, 시청 기록, 이메일 등은 읽지도 저장하지도 않습니다.</td></tr>
+          <tr><th>쓰는 곳</th><td>우리 영상 업로드와 업로드 결과 확인, 채널 성장(구독자 수) 기록에만 씁니다. 판매·광고·제3자 제공·AI 서비스 전송은 하지 않습니다.</td></tr>
+          <tr><th>보관·삭제</th><td>운영자 컴퓨터 안에만 둡니다(인증 토큰은 설정 파일, 나머지는 로컬 파일·데이터베이스). 구독자 수는 매일 인증된 호출로 새로 받습니다. 접근 권한을 해제하거나 LaunchPilot 사용을 끝내면 저장된 YouTube API 데이터와 토큰을 <b>7일 안에</b> 지웁니다.</td></tr>
+        </table></div>
+        <p><b>접근 권한 해제:</b> Google 보안 설정 페이지 <a href="https://security.google.com/settings/security/permissions" rel="noopener">https://security.google.com/settings/security/permissions</a> 에서 “BridgeLab Uploader”의 접근 권한을 언제든지 해제할 수 있습니다.</p>
+        <p><b>쿠키·기기 정보:</b> LaunchPilot은 누구의 기기에도 쿠키를 두거나 기기 정보를 모으지 않습니다. 이 웹사이트는 쿠키를 쓰지 않고, 고른 언어만 방문자 브라우저의 로컬 저장소에 기억하며, 글꼴은 Google Fonts에서 불러옵니다. 앱 링크를 누르면 우리 서버가 쿠키·IP 없이 클릭 시각·링크·유입 채널·국가·기기 종류(휴대폰/PC)만 기록합니다.</p>
+        <p>문의·불만: <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a></p>
+      </div>
+
       <div class="card">
-        <h2><span class="n">08</span>연락처 · 개인정보 보호책임자</h2>
+        <h2><span class="n">09</span>연락처 · 개인정보 보호책임자</h2>
         <p>브릿지랩(Bridgelab) 대표 · 이메일 <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a></p>
         <p class="note">개인정보 침해 신고·상담: 개인정보침해신고센터(privacy.kisa.or.kr, 국번 없이 118), 개인정보분쟁조정위원회(www.kopico.go.kr, 1833-6972)</p>
         <p class="note">이 방침이 바뀌면 이 페이지에 시행일과 함께 알립니다. 14세 미만 아동을 대상으로 하지 않습니다.</p>
@@ -149,8 +166,8 @@ a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
 
       <div class="card">
         <h2><span class="n">01</span>Who we are and what this covers</h2>
-        <p>Bridgelab (브릿지랩, Korean business registration no. 729-71-00630, “we”) is a one-person studio. This policy covers the data processed through the Threads API by <b>LaunchPilot</b> (Meta app name “Bridgelab Poster”), an internal tool we built and use ourselves.</p>
-        <p>LaunchPilot is not offered to the public. It is connected to exactly one Threads account, our own <b>@bridgelab.app</b>. No other person can sign in or connect an account.</p>
+        <p>Bridgelab (브릿지랩, Korean business registration no. 729-71-00630, “we”) is a one-person studio. This policy covers the data processed through the Threads API by <b>LaunchPilot</b> (Meta app name “Bridgelab Poster”), an internal tool we built and use ourselves, through the Threads API and through <b>YouTube API Services</b>, and to this website.</p>
+        <p>LaunchPilot is not offered to the public. It is connected to exactly one Threads account, our own <b>@bridgelab.app</b>, and exactly one YouTube channel, our own <b>@bridgelab_app</b>. No other person can sign in or connect an account.</p>
       </div>
 
       <div class="card">
@@ -204,8 +221,23 @@ a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
         </ul>
       </div>
 
+      <div class="card" id="youtube-en">
+        <h2><span class="n">08</span>YouTube API Services (our channel @bridgelab_app)</h2>
+        <p>LaunchPilot uses <b>YouTube API Services</b> (YouTube Data API v3) to upload videos that Bridgelab made itself to Bridgelab's own YouTube channel, @bridgelab_app. Information processed through YouTube API Services is also subject to the <b>Google Privacy Policy</b> at <a href="http://www.google.com/policies/privacy" rel="noopener">http://www.google.com/policies/privacy</a>, and use of YouTube is subject to the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a>.</p>
+        <div class="tbl"><table>
+          <tr><th>Scopes requested</th><td><code>youtube.upload</code> (upload videos and thumbnails to our channel) and <code>youtube.readonly</code> (confirm that the connected channel is @bridgelab_app, and read its subscriber count once a day).</td></tr>
+          <tr><th>Data we access and store</th><td>Our own channel's ID, title, handle and subscriber count; the video ID, URL and privacy status YouTube returns for the videos we upload; and the OAuth refresh token that keeps the connection.</td></tr>
+          <tr><th>Data we do not access</th><td>We never read or store information about other YouTube users, viewers or channels: no comments, watch history, email addresses or similar.</td></tr>
+          <tr><th>How we use it</th><td>Only to upload our own videos, confirm the upload, and record our channel's growth. We never sell it, use it for advertising, share it with third parties, or send it to AI services.</td></tr>
+          <tr><th>Storage and deletion</th><td>On the owner's computer only (the token in a local configuration file, the rest in local files and a local database). The subscriber count is refreshed daily with an authorized API call. If access is revoked or we stop using LaunchPilot, stored YouTube API data and the token are deleted <b>within 7 days</b>.</td></tr>
+        </table></div>
+        <p><b>Revoking access:</b> you can revoke LaunchPilot's (“BridgeLab Uploader”) access to your data at any time via the Google security settings page at <a href="https://security.google.com/settings/security/permissions" rel="noopener">https://security.google.com/settings/security/permissions</a>.</p>
+        <p><b>Cookies and device information:</b> LaunchPilot does not place cookies on, or collect information from, anyone's device. This website sets no cookies: it only remembers the language you pick in your own browser's local storage, and it loads fonts from Google Fonts. When you tap an app link, our server records the time, the link, the channel you came from, your country and a device class (phone/desktop) — no cookies and no IP address.</p>
+        <p>Questions or complaints: <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a></p>
+      </div>
+
       <div class="card">
-        <h2><span class="n">08</span>Contact</h2>
+        <h2><span class="n">09</span>Contact</h2>
         <p>Bridgelab (브릿지랩), owner and privacy officer · <a href="mailto:eotmd1212@gmail.com">eotmd1212@gmail.com</a></p>
         <p class="note">Changes to this policy will be posted on this page with a new effective date. This tool is not directed at children under 14.</p>
       </div>
