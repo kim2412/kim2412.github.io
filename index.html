@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bridgelab</title>
+<meta name="description" content="AI로 앱·게임을 만드는 1인 스튜디오 Bridgelab — iOS 앱, 게임, 토스 미니앱, 웹서비스 모음.">
+<meta property="og:title" content="Bridgelab — AI로 앱·게임 만드는 1인 스튜디오">
+<meta property="og:description" content="iOS 앱 4 · 게임 3 · 토스 미니앱 2 · 웹 2. 전부 한곳에서.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1112" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111412'/%3E%3Cpath d='M6 22c3-8 17-8 20 0' stroke='%23FF5A36' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M9 22v-3M16 22v-6M23 22v-3' stroke='%23F1F2EE' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/*
+  Design plan — "studio shelf"
+  The products are the color: 12 real app icons on a quiet, slightly green-grey paper.
+  Palette: paper #F1F2EE, card #FFFFFF, ink #111412, muted #5C645F, hairline #DADDD6, signal #FF5A36 (one accent).
+  Type: Bricolage Grotesque for the wordmark and numbers, IBM Plex Sans KR/JP for text, Plex Mono for prices.
+  Layout: one phone-first column (link-in-bio), two card columns from 760px; sections = the four kinds of product.
+*/
+:root{
+  --paper:#F1F2EE; --card:#FFFFFF; --card-hover:#F7F8F5; --ink:#111412; --ink-2:#2E3430; --muted:#5C645F;
+  --line:#DADDD6; --signal:#FF5A36; --signal-ink:#FFFFFF; --chip:#E6E8E2; --soon:#8A6D1E; --soon-bg:#F5EBCB;
+  --shadow:0 1px 0 rgba(17,20,18,.04);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#0F1112; --card:#171A1B; --card-hover:#1D2122; --ink:#EEF0EC; --ink-2:#CDD2CC; --muted:#8E968F;
+    --line:#2A2F2E; --signal:#FF6B4A; --signal-ink:#140806; --chip:#232827; --soon:#E7C766; --soon-bg:#2E2710;
+    --shadow:none; color-scheme: dark; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 15px/1.55 "IBM Plex Sans KR","IBM Plex Sans JP",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+:lang(ja) body, body[data-lang="ja"]{font-family:"IBM Plex Sans JP","IBM Plex Sans KR",system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding-inline:18px;padding-block:28px 56px}
+header{display:grid;gap:18px;padding-block:8px 26px;border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark svg{width:34px;height:34px;flex:none}
+.word{font:800 22px/1 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card)}
+.lang button{appearance:none;border:0;background:transparent;color:var(--muted);font:600 12px/1 "IBM Plex Sans KR",sans-serif;
+  padding:7px 10px;border-radius:999px;cursor:pointer;min-width:34px}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+h1{margin:6px 0 0;font:800 clamp(30px,7.2vw,50px)/1.05 "Bricolage Grotesque","IBM Plex Sans KR",sans-serif;letter-spacing:-.03em;text-wrap:balance}
+h1 .ko, h1 .ja{font-family:"IBM Plex Sans KR","IBM Plex Sans JP",sans-serif;font-weight:600;letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--signal)}
+.lede{margin:0;color:var(--ink-2);max-width:52ch;font-size:16px}
+.tally{display:flex;flex-wrap:wrap;gap:8px 18px;margin:2px 0 0;padding:0;list-style:none}
+.tally li{display:flex;align-items:baseline;gap:6px;color:var(--muted);font-size:13px}
+.tally b{font:700 26px/1 "Bricolage Grotesque",sans-serif;color:var(--ink);font-variant-numeric:tabular-nums}
+.social{display:flex;flex-wrap:wrap;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13px;font-weight:500;
+  padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-2)}
+.social a:hover{border-color:var(--ink)}
+.social svg{width:14px;height:14px}
+section{padding-top:30px}
+.shelf-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+h2{margin:0;font:700 13px/1.2 "IBM Plex Sans KR","IBM Plex Sans JP",sans-serif;letter-spacing:.06em;color:var(--muted)}
+.count{font:500 12px/1 "IBM Plex Mono",monospace;color:var(--muted)}
+.grid{display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:760px){ .grid{grid-template-columns:1fr 1fr} }
+.item{display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:14px;padding:12px 14px 12px 12px;
+  background:var(--card);border:1px solid var(--line);border-radius:18px;text-decoration:none;box-shadow:var(--shadow);
+  transition:background .15s ease, transform .15s ease}
+a.item:hover{background:var(--card-hover)}
+a.item:active{transform:scale(.99)}
+.item:focus-visible,.social a:focus-visible,.lang button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.icon{width:58px;height:58px;border-radius:14px;object-fit:cover;background:var(--chip);border:1px solid var(--line)}
+.name{font-weight:600;font-size:15.5px;line-height:1.3;letter-spacing:-.01em}
+.desc{color:var(--muted);font-size:13.5px;line-height:1.4;margin-top:2px}
+.tag{font:500 12px/1 "IBM Plex Mono","IBM Plex Sans KR",monospace;padding:7px 9px;border-radius:999px;background:var(--chip);
+  color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tag.free{background:transparent;border:1px solid var(--line)}
+.tag.soon{background:var(--soon-bg);color:var(--soon)}
+.item.static{opacity:.92}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
+  color:var(--muted);font-size:12.5px}
+[data-l]{display:none}
+body[data-lang="ko"] [data-l="ko"], body[data-lang="en"] [data-l="en"], body[data-lang="ja"] [data-l="ja"]{display:revert}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+</head>
+<body data-lang="ko">
+<div class="wrap">
+  <header>
+    <div class="top">
+      <a class="mark" href="#" aria-label="Bridgelab">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--ink)"/><path d="M6 22c3-8 17-8 20 0" stroke="var(--signal)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M9 22v-3M16 22v-6M23 22v-3" stroke="var(--paper)" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span class="word">Bridgelab</span>
+      </a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="lang-ko" data-set="ko" aria-pressed="true">한</button>
+        <button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" id="lang-ja" data-set="ja" aria-pressed="false">日</button>
+      </div>
+    </div>
+    <h1>
+      <span data-l="ko" class="ko">AI로 앱·게임을 만드는<br><em>1인 스튜디오</em></span>
+      <span data-l="en">A one-person studio<br>building apps with <em>AI</em></span>
+      <span data-l="ja" class="ja">AIでアプリとゲームを作る<br><em>1人スタジオ</em></span>
+    </h1>
+    <p class="lede">
+      <span data-l="ko">만들면서 실제로 쓰는 AI 도구와 명령어를 정리해 올리고, 만든 것들은 여기 모아 둡니다.</span>
+      <span data-l="en">I share the AI tools and commands I actually use, and keep everything I've shipped right here.</span>
+      <span data-l="ja">実際に使っているAIツールとコマンドを整理して共有し、作ったものはここにまとめています。</span>
+    </p>
+    <ul class="tally">
+      <li><b>4</b><span data-l="ko">iOS 앱</span><span data-l="en">iOS apps</span><span data-l="ja">iOSアプリ</span></li>
+      <li><b>3</b><span data-l="ko">게임</span><span data-l="en">games</span><span data-l="ja">ゲーム</span></li>
+      <li><b>2</b><span data-l="ko">토스 미니앱</span><span data-l="en">Toss mini-apps</span><span data-l="ja">Tossミニアプリ</span></li>
+      <li><b>2</b><span data-l="ko">웹서비스</span><span data-l="en">web services</span><span data-l="ja">Webサービス</span></li>
+    </ul>
+    <nav class="social" aria-label="SNS">
+      <a href="https://www.threads.com/@bridgelab.app" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 8.5c.4 2 4.6 2 5-1-.4-2.5-4-2.5-4.5-.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>Threads</a>
+      <a href="https://www.youtube.com/@bridgelab_app" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 6v4l3.2-2z" fill="currentColor"/></svg>YouTube</a>
+      <a href="https://www.instagram.com/bridgelab.app/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Instagram</a>
+      <a href="https://www.tiktok.com/@bridgelab.app" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 2v8.2a2.3 2.3 0 1 1-2-2.3M9 2c.3 1.7 1.6 3 3.4 3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>TikTok EN</a>
+      <a href="https://www.tiktok.com/@bridgelab.jp" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 2v8.2a2.3 2.3 0 1 1-2-2.3M9 2c.3 1.7 1.6 3 3.4 3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>TikTok JP</a>
+      <a href="https://x.com/bridgelab_jp" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>X</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="h-apps">
+      <div class="shelf-head"><h2 id="h-apps"><span data-l="ko">iOS 앱</span><span data-l="en">iOS apps</span><span data-l="ja">iOSアプリ</span></h2><span class="count">App Store</span></div>
+      <div class="grid">
+        <a class="item" href="https://apps.apple.com/app/id6801365029" target="_blank" rel="noopener">
+          <img class="icon" src="img/6801365029.jpg" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name">Glim</div><div class="desc"><span data-l="ko">잠금화면에서 스치기만 해도 외워지는 단어장</span><span data-l="en">Learn words just by glancing at your lock screen</span><span data-l="ja">ロック画面を見るだけで覚える単語帳</span></div></div>
+          <span class="tag free"><span data-l="ko">무료</span><span data-l="en">Free</span><span data-l="ja">無料</span></span>
+        </a>
+        <a class="item" href="https://apps.apple.com/app/id6797915940" target="_blank" rel="noopener">
+          <img class="icon" src="img/6797915940.jpg" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">오버나이트</span><span data-l="en">Overnight</span><span data-l="ja">オーバーナイト</span></div><div class="desc"><span data-l="ko">밤사이 뉴스·코인·환율, 아침에 알림 하나로</span><span data-l="en">What moved overnight, in one morning alert</span><span data-l="ja">夜の間のニュース・為替を朝ひとつの通知で</span></div></div>
+          <span class="tag free"><span data-l="ko">무료</span><span data-l="en">Free</span><span data-l="ja">無料</span></span>
+        </a>
+        <a class="item" href="https://apps.apple.com/app/id6791359818" target="_blank" rel="noopener">
+          <img class="icon" src="img/6791359818.jpg" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">인생영수증</span><span data-l="en">Life Receipt</span><span data-l="ja">人生レシート</span></div><div class="desc"><span data-l="ko">지난 한 주가 영수증 한 장으로</span><span data-l="en">Your week, printed as a single receipt</span><span data-l="ja">1週間をレシート1枚に</span></div></div>
+          <span class="tag free"><span data-l="ko">무료</span><span data-l="en">Free</span><span data-l="ja">無料</span></span>
+        </a>
+        <div class="item static">
+          <img class="icon" src="img/serein.png" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">세레인</span><span data-l="en">SERANE</span><span data-l="ja">セレイン</span></div><div class="desc"><span data-l="ko">티 안 나게 자연스러운 사진 보정</span><span data-l="en">Photo retouching that doesn't look edited</span><span data-l="ja">バレない自然な写真補正</span></div></div>
+          <span class="tag soon"><span data-l="ko">곧 출시</span><span data-l="en">Soon</span><span data-l="ja">近日公開</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-games">
+      <div class="shelf-head"><h2 id="h-games"><span data-l="ko">게임</span><span data-l="en">Games</span><span data-l="ja">ゲーム</span></h2><span class="count">App Store</span></div>
+      <div class="grid">
+        <a class="item" href="https://apps.apple.com/app/id6811579701" target="_blank" rel="noopener">
+          <img class="icon" src="img/6811579701.jpg" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">탐정으로 살아남기</span><span data-l="en">Surviving as a Detective</span><span data-l="ja">探偵として生き残る</span></div><div class="desc"><span data-l="ko">단서를 모아 사건을 푸는 추리</span><span data-l="en">Collect clues and crack the case</span><span data-l="ja">手がかりを集めて事件を解く推理</span></div></div>
+          <span class="tag">₩6,600</span>
+        </a>
+        <a class="item" href="https://apps.apple.com/app/id6811024174" target="_blank" rel="noopener">
+          <img class="icon" src="img/6811024174.jpg" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name">OBELISK<span data-l="ko">: 제국연대기</span><span data-l="en">: Empire Chronicles</span><span data-l="ja">: 帝国年代記</span></div><div class="desc"><span data-l="ko">정통 턴제 4X 문명 전략</span><span data-l="en">Classic turn-based 4X civilization strategy</span><span data-l="ja">本格ターン制4X文明ストラテジー</span></div></div>
+          <span class="tag">₩8,000</span>
+        </a>
+        <a class="item" href="https://apps.apple.com/app/id6809274878" target="_blank" rel="noopener">
+          <img class="icon" src="img/6809274878.jpg" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">어비스: 심연의 잔향</span><span data-l="en">ABYSS</span><span data-l="ja">アビス</span></div><div class="desc"><span data-l="ko">내고 나서도 사라지지 않는 카드, 덱빌딩 로그라이크</span><span data-l="en">A deckbuilding roguelike where cards leave echoes</span><span data-l="ja">使っても消えないカードのデッキ構築ローグライク</span></div></div>
+          <span class="tag">₩6,000</span>
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-toss">
+      <div class="shelf-head"><h2 id="h-toss"><span data-l="ko">토스 미니앱</span><span data-l="en">Toss mini-apps</span><span data-l="ja">Tossミニアプリ</span></h2><span class="count">Toss</span></div>
+      <div class="grid">
+        <a class="item" href="https://minion.toss.im/d2OvFYT" target="_blank" rel="noopener">
+          <img class="icon" src="img/toss-meal-icon.png" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">우리아이 급식</span><span data-l="en">School Meals</span><span data-l="ja">うちの子の給食</span></div><div class="desc"><span data-l="ko">알레르기 확인부터 급식 없는 날 알림까지</span><span data-l="en">Menus, allergy checks and no-lunch-day alerts</span><span data-l="ja">アレルギー確認から給食のない日の通知まで</span></div></div>
+          <span class="tag"><span data-l="ko">토스</span><span data-l="en">Toss</span><span data-l="ja">Toss</span></span>
+        </a>
+        <a class="item" href="https://minion.toss.im/R1BAjeZy" target="_blank" rel="noopener">
+          <img class="icon" src="img/toss-elec-icon.png" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">전기요금계산기</span><span data-l="en">Power Bill Calculator</span><span data-l="ja">電気料金計算機</span></div><div class="desc"><span data-l="ko">이번 달 전기요금, 바로 계산</span><span data-l="en">Work out this month's electricity bill in seconds</span><span data-l="ja">今月の電気料金をすぐ計算</span></div></div>
+          <span class="tag"><span data-l="ko">토스</span><span data-l="en">Toss</span><span data-l="ja">Toss</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-web">
+      <div class="shelf-head"><h2 id="h-web"><span data-l="ko">웹서비스</span><span data-l="en">Web</span><span data-l="ja">Webサービス</span></h2><span class="count">Web</span></div>
+      <div class="grid">
+        <a class="item" href="https://comebackradar.com/ko" target="_blank" rel="noopener">
+          <img class="icon" src="img/comeback.svg" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name">Comeback Radar</div><div class="desc"><span data-l="ko">K-pop 컴백·투어 일정을 내 시간대로</span><span data-l="en">K-pop comebacks and tours, in your time zone</span><span data-l="ja">K-POPのカムバック・ツアーを現地時間で</span></div></div>
+          <span class="tag"><span data-l="ko">웹</span><span data-l="en">Web</span><span data-l="ja">Web</span></span>
+        </a>
+        <a class="item" href="https://www.baeung.co.kr/" target="_blank" rel="noopener">
+          <img class="icon" src="img/baeung-icon.png" alt="" width="58" height="58" loading="lazy">
+          <div><div class="name"><span data-l="ko">배웅</span><span data-l="en">Baeung</span><span data-l="ja">ペウン</span></div><div class="desc"><span data-l="ko">가입 없이 1분, 무료 부고장</span><span data-l="en">Free digital funeral notices in a minute, no sign-up</span><span data-l="ja">登録不要、1分で作れる無料の訃報</span></div></div>
+          <span class="tag"><span data-l="ko">웹</span><span data-l="en">Web</span><span data-l="ja">Web</span></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Bridgelab · 브릿지랩</span>
+    <span><span data-l="ko">한 사람이 AI와 함께 만듭니다</span><span data-l="en">Made by one person, with AI</span><span data-l="ja">ひとりとAIで作っています</span></span>
+  </footer>
+</div>
+<script>
+(function(){
+  var body=document.body, buttons=document.querySelectorAll('.lang button');
+  function set(lang){
+    body.setAttribute('data-lang',lang); document.documentElement.lang=lang;
+    buttons.forEach(function(b){b.setAttribute('aria-pressed', String(b.getAttribute('data-set')===lang));});
+    try{localStorage.setItem('bl-lang',lang);}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('bl-lang');}catch(e){}
+  var nav=(navigator.language||'ko').slice(0,2);
+  set(saved || (nav==='ja'?'ja':nav==='ko'?'ko':'en'));
+  buttons.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-set'));});});
+})();
+</script>
+</body>
+</html>
